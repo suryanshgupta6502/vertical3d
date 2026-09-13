@@ -1,0 +1,52 @@
+<!-- 3D Tent Configurator Embed for Horizon Theme -->
+<div class="tent-configurator-container" style="width: 100%; margin: 25px 0;">
+    <iframe id="tent-configurator-iframe" src="https://vertical3d.vercel.app/"
+        style="width: 100%; min-height: 820px; border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);"
+        allow="clipboard-write" loading="lazy">
+    </iframe>
+</div>
+
+
+<script>
+    (function () {
+        window.addEventListener("message", async function (event) {
+            if (!event.data || event.data.type !== "CONFIGURATOR_ADD_TO_CART") return;
+            const data = event.data;
+
+            try {
+                // 1. Convert base64 texture and 3D preview into binary file blobs
+                const textureBlob = await (await fetch(data.textureData)).blob();
+                const snapshotBlob = await (await fetch(data.snapshotData)).blob();
+
+                // 2. Build Shopify standard FormData
+                const formData = new FormData();
+                formData.append("id", {{ product.selected_or_first_available_variant.id }});
+        formData.append("quantity", 1);
+        formData.append("properties[Design ID]", data.designId);
+        formData.append("properties[Base Color]", data.color);
+        formData.append("properties[Print Layout Texture]", textureBlob, `print_layout_${data.designId}.png`);
+        formData.append("properties[3D Isometric Preview]", snapshotBlob, `preview_3d_${data.designId}.jpg`);
+
+        // 3. Post to Shopify's native Cart API
+        const res = await fetch(window.Shopify.routes.root + "cart/add.js", {
+            method: "POST",
+            body: formData
+        });
+        const cartItem = await res.json();
+
+        // 4. In Horizon theme, trigger the cart drawer to open or refresh:
+        if (document.querySelector('cart-drawer')) {
+            // Horizon / Dawn OS 2.0 cart-drawer trigger
+            document.querySelector('cart-drawer').renderContents?.();
+            document.querySelector('cart-drawer').open?.();
+        } else {
+            // Fallback: redirect directly to cart
+            window.location.href = window.Shopify.routes.root + "cart";
+        }
+    } catch (err) {
+        console.error("Error adding custom tent to Horizon cart:", err);
+        alert("Could not add custom tent to cart. Please try again.");
+    }
+  });
+}) ();
+</script>
