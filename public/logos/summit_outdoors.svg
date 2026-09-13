@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <rect width="300" height="120" rx="16" fill="#0f172a"/>
+  <polygon points="60,90 90,35 120,90" fill="#38bdf8"/>
+  <polygon points="95,90 120,45 145,90" fill="#0284c7"/>
+  <polygon points="90,35 98,52 82,52" fill="#ffffff"/>
+  <text x="155" y="60" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="22" letter-spacing="1">SUMMIT</text>
+  <text x="155" y="82" fill="#38bdf8" font-family="sans-serif" font-weight="600" font-size="14" letter-spacing="3">OUTDOORS</text>
+</svg>
