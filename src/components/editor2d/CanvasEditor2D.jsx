@@ -155,17 +155,9 @@ export default function CanvasEditor2D({ onCanvasUpdated }) {
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
     >
-      {/* Top Bar with title & quick layer tools */}
-      <div className="editor-surface-title-row">
-        <div className="editor-title-col">
-          <span className="editor-badge">Full Tent Texture Canvas</span>
-          <h2 className="editor-surface-name">Canopy Print Layout</h2>
-          <p className="editor-surface-desc">
-            Single unified canvas mapping live across the entire 3D tent model.
-          </p>
-        </div>
-
-        {activeLayer && (
+      {/* Quick layer tools if a layer is selected */}
+      {activeLayer && (
+        <div className="editor-surface-title-row" style={{ justifyContent: "center", marginBottom: "8px" }}>
           <div className="layer-fast-actions">
             <span className="layer-tag-label">
               {activeLayer.type === "text" ? `"${activeLayer.content}"` : activeLayer.name || "Image"}
@@ -213,8 +205,8 @@ export default function CanvasEditor2D({ onCanvasUpdated }) {
               <Trash2 size={14} />
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* The Single Square Canvas Frame */}
       <div className="canvas-frame">
@@ -230,15 +222,6 @@ export default function CanvasEditor2D({ onCanvasUpdated }) {
             objectFit: "contain"
           }}
         />
-      </div>
-
-      {/* Bottom Guidance */}
-      <div className="editor-bottom-hint">
-        <span>Click element to select</span>
-        <span>•</span>
-        <span>Drag anywhere to position on tent</span>
-        <span>•</span>
-        <span>1:1 Live 3D Mapping</span>
       </div>
     </div>
   );

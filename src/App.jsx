@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect, useCallback } from "react";
 import { ConfigProvider, useConfig } from "./store/ConfigContext";
 import Header from "./components/layout/Header";
 import Sidebar from "./components/layout/Sidebar";
-import SurfaceNav from "./components/editor2d/SurfaceNav";
 import CanvasEditor2D from "./components/editor2d/CanvasEditor2D";
 import TentViewer3D from "./components/viewer3d/TentViewer3D";
 import ViewportToolbar from "./components/viewer3d/ViewportToolbar";
@@ -74,6 +73,8 @@ function ConfiguratorContent() {
       type: "CONFIGURATOR_ADD_TO_CART",
       designId,
       pricing,
+      finalPrice: pricing.subtotal,
+      formattedPrice: `$${pricing.subtotal.toFixed(2)}`,
       color: canvasConfig.backgroundColor,
       textureData: uvLayout,
       snapshotData: preview3d
@@ -157,7 +158,6 @@ function ConfiguratorContent() {
           {/* 2D Canvas Editor */}
           {(viewMode === "split" || viewMode === "2d") && (
             <div className="workspace-pane">
-              <SurfaceNav />
               <div style={{ flex: 1, position: "relative" }}>
                 <CanvasEditor2D onCanvasUpdated={handleCanvasUpdated} />
               </div>

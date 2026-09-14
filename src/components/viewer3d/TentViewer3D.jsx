@@ -8,7 +8,7 @@ import { Loader2 } from "lucide-react";
 
 const CAMERA_POSITIONS = {
   front: { pos: [0, 1.8, 4.2], target: [0, 1.5, 0] },
-  iso: { pos: [3.4, 2.4, 3.4], target: [0, 1.5, 0] },
+  iso: { pos: [7, 4, 10], target: [0, 1.5, 0] },
   back: { pos: [0, 1.8, -4.2], target: [0, 1.5, 0] },
   left: { pos: [-4.2, 1.8, 0], target: [0, 1.5, 0] },
   right: { pos: [4.2, 1.8, 0], target: [0, 1.5, 0] },
@@ -92,7 +92,7 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
         };
       });
 
-      const current = CAMERA_POSITIONS[cameraPreset] || CAMERA_POSITIONS.front;
+      const current = CAMERA_POSITIONS[cameraPreset] || CAMERA_POSITIONS.iso;
       if (cameraRef.current && controlsRef.current && rendererRef.current && sceneRef.current) {
         cameraRef.current.position.set(...current.pos);
         controlsRef.current.target.set(...current.target);
@@ -114,12 +114,12 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
 
     // 1. Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color("#090d16");
+    scene.background = new THREE.Color("#f8fafc");
     sceneRef.current = scene;
 
     // 2. Camera
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
-    const initialCam = CAMERA_POSITIONS.front;
+    const initialCam = CAMERA_POSITIONS[cameraPreset] || CAMERA_POSITIONS.iso;
     camera.position.set(...initialCam.pos);
     cameraRef.current = camera;
 
@@ -135,7 +135,7 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.15;
+    renderer.toneMappingExposure = 1.05;
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -150,10 +150,10 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
     controlsRef.current = controls;
 
     // 5. Lighting
-    const ambientLight = new THREE.AmbientLight("#FFFFFF", 1.2);
+    const ambientLight = new THREE.AmbientLight("#FFFFFF", 1.5);
     scene.add(ambientLight);
 
-    const dirLight1 = new THREE.DirectionalLight("#FFFFFF", 2.2);
+    const dirLight1 = new THREE.DirectionalLight("#FFFFFF", 1.8);
     dirLight1.position.set(5, 8, 5);
     dirLight1.castShadow = true;
     dirLight1.shadow.mapSize.width = 2048;
@@ -163,20 +163,20 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
     dirLight1.shadow.bias = -0.0005;
     scene.add(dirLight1);
 
-    const dirLight2 = new THREE.DirectionalLight("#93c5fd", 1.0);
+    const dirLight2 = new THREE.DirectionalLight("#e2e8f0", 0.6);
     dirLight2.position.set(-5, 4, -5);
     scene.add(dirLight2);
 
     // 6. Shadow Floor
     const floorGeo = new THREE.PlaneGeometry(16, 16);
-    const floorMat = new THREE.ShadowMaterial({ opacity: 0.4 });
+    const floorMat = new THREE.ShadowMaterial({ opacity: 0.12 });
     const floor = new THREE.Mesh(floorGeo, floorMat);
     floor.rotation.x = -Math.PI / 2;
     floor.position.y = 0;
     floor.receiveShadow = true;
     scene.add(floor);
 
-    const grid = new THREE.GridHelper(12, 12, "#1e293b", "#0f172a");
+    const grid = new THREE.GridHelper(12, 12, "#cbd5e1", "#e2e8f0");
     grid.position.y = 0.001;
     scene.add(grid);
 
@@ -335,7 +335,7 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
   // Camera preset transition
   useEffect(() => {
     if (!cameraRef.current || !controlsRef.current) return;
-    const target = CAMERA_POSITIONS[cameraPreset] || CAMERA_POSITIONS.front;
+    const target = CAMERA_POSITIONS[cameraPreset] || CAMERA_POSITIONS.iso;
 
     const cam = cameraRef.current;
     const controls = controlsRef.current;
@@ -379,7 +379,7 @@ const TentViewer3D = forwardRef(function TentViewer3D({ masterCanvas, onCanvasRe
           style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: "rgba(9, 13, 22, 0.92)",
+            backgroundColor: "rgba(248, 250, 252, 0.92)",
             backdropFilter: "blur(6px)",
             display: "flex",
             flexDirection: "column",

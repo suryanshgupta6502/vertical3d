@@ -9,7 +9,7 @@ export function ConfigProvider({ children }) {
 
   // Single unified canvas configuration
   const [canvasConfig, setCanvasConfig] = useState({
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#FACC15",
     layers: []
   });
 
@@ -26,7 +26,7 @@ export function ConfigProvider({ children }) {
   const [viewMode, setViewMode] = useState("split");
 
   // Camera preset & controls
-  const [cameraPreset, setCameraPreset] = useState("front");
+  const [cameraPreset, setCameraPreset] = useState("iso");
   const [autoRotate, setAutoRotate] = useState(false);
 
   // Set Background Color

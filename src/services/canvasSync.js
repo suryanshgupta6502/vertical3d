@@ -24,7 +24,7 @@ export function renderCanvasConfig(ctx, config, width = TEXTURE_SIZE, height = T
   ctx.clearRect(0, 0, width, height);
 
   // 1. Background color
-  ctx.fillStyle = config.backgroundColor || "#FFFFFF";
+  ctx.fillStyle = config.backgroundColor || "#FACC15";
   ctx.fillRect(0, 0, width, height);
 
   // 2. Render all layers (images and text)

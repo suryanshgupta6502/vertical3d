@@ -18,13 +18,7 @@ export default function Header({
       {/* Brand & Product Info */}
       <div className="brand-section">
         <div className="brand-logo-badge">▲</div>
-        <div className="brand-titles">
-          <div className="brand-title-row">
-            <h1 className="brand-title">{PRODUCT_INFO.title}</h1>
-            <span className="design-id-pill">{designId}</span>
-          </div>
-          <p className="brand-subtitle">{PRODUCT_INFO.subtitle}</p>
-        </div>
+        <span className="design-id-pill">{designId}</span>
       </div>
 
       {/* View Mode Switcher (Split, 3D Only, 2D Canvas) */}
@@ -148,7 +142,7 @@ export default function Header({
             }}
           >
             <ShoppingCart size={14} />
-            <span>{cartSuccessMessage ? "Added to Cart!" : "Add to Cart"}</span>
+            <span>{cartSuccessMessage ? "✓ Added to Cart!" : `Add to Cart • $${pricing.subtotal.toFixed(2)}`}</span>
           </button>
         )}
       </div>
