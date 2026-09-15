@@ -1,0 +1,277 @@
+{
+  "model": "public/Tent_8_8.glb",
+  "material": "fabric_Mat",
+  "totalVertices": 1427,
+  "sectionsSummary": {
+    "apex": {
+      "name": "Apex (Top Peak)",
+      "vertexCount": 102,
+      "uvBounds": {
+        "minU": 0.45381,
+        "maxU": 0.53446,
+        "minV": 0.46705,
+        "maxV": 0.54259
+      },
+      "canvas1024Bounds": {
+        "minX": 464.7,
+        "maxX": 547.3,
+        "minY": 478.3,
+        "maxY": 555.6
+      },
+      "uvCenter": {
+        "u": 0.4941,
+        "v": 0.5048,
+        "pxX": 506,
+        "pxY": 516.9
+      },
+      "posBounds": {
+        "minX": -0.027,
+        "maxX": 0.021,
+        "minY": 2.612,
+        "maxY": 2.624,
+        "minZ": -0.022,
+        "maxZ": 0.037
+      }
+    },
+    "frontPeak": {
+      "name": "Front Peak",
+      "vertexCount": 335,
+      "uvBounds": {
+        "minU": 0.07952,
+        "maxU": 0.905,
+        "minV": 0.54222,
+        "maxV": 0.90896
+      },
+      "canvas1024Bounds": {
+        "minX": 81.4,
+        "maxX": 926.7,
+        "minY": 555.2,
+        "maxY": 930.8
+      },
+      "uvCenter": {
+        "u": 0.4923,
+        "v": 0.7256,
+        "pxX": 504.1,
+        "pxY": 743
+      },
+      "posBounds": {
+        "minX": -1.212,
+        "maxX": 1.21,
+        "minY": 1.511,
+        "maxY": 2.453,
+        "minZ": 0.127,
+        "maxZ": 1.219
+      }
+    },
+    "frontValance": {
+      "name": "Front Valance",
+      "vertexCount": 156,
+      "uvBounds": {
+        "minU": 0.01324,
+        "maxU": 0.97124,
+        "minV": 0.7966,
+        "maxV": 0.975
+      },
+      "canvas1024Bounds": {
+        "minX": 13.6,
+        "maxX": 994.5,
+        "minY": 815.7,
+        "maxY": 998.4
+      },
+      "uvCenter": {
+        "u": 0.4922,
+        "v": 0.8858,
+        "pxX": 504.1,
+        "pxY": 907.1
+      },
+      "posBounds": {
+        "minX": -1.203,
+        "maxX": 1.201,
+        "minY": 1.2,
+        "maxY": 1.418,
+        "minZ": 1.2,
+        "maxZ": 1.224
+      }
+    },
+    "backPeak": {
+      "name": "Back Peak",
+      "vertexCount": 178,
+      "uvBounds": {
+        "minU": 0.22122,
+        "maxU": 0.89716,
+        "minV": 0.09833,
+        "maxV": 0.4346
+      },
+      "canvas1024Bounds": {
+        "minX": 226.5,
+        "maxX": 918.7,
+        "minY": 100.7,
+        "maxY": 445
+      },
+      "uvCenter": {
+        "u": 0.5592,
+        "v": 0.2665,
+        "pxX": 572.6,
+        "pxY": 272.9
+      },
+      "posBounds": {
+        "minX": -1.192,
+        "maxX": 1.21,
+        "minY": 1.511,
+        "maxY": 2.45,
+        "minZ": -1.217,
+        "maxZ": -0.117
+      }
+    },
+    "backValance": {
+      "name": "Back Valance",
+      "vertexCount": 97,
+      "uvBounds": {
+        "minU": 0.01525,
+        "maxU": 0.96967,
+        "minV": 0.03179,
+        "maxV": 0.22799
+      },
+      "canvas1024Bounds": {
+        "minX": 15.6,
+        "maxX": 992.9,
+        "minY": 32.6,
+        "maxY": 233.5
+      },
+      "uvCenter": {
+        "u": 0.4925,
+        "v": 0.1299,
+        "pxX": 504.3,
+        "pxY": 133
+      },
+      "posBounds": {
+        "minX": -1.201,
+        "maxX": 1.201,
+        "minY": 1.2,
+        "maxY": 1.418,
+        "minZ": -1.219,
+        "maxZ": -1.201
+      }
+    },
+    "leftPeak": {
+      "name": "Left Peak",
+      "vertexCount": 198,
+      "uvBounds": {
+        "minU": 0.07953,
+        "maxU": 0.47311,
+        "minV": 0.09832,
+        "maxV": 0.79465
+      },
+      "canvas1024Bounds": {
+        "minX": 81.4,
+        "maxX": 484.5,
+        "minY": 100.7,
+        "maxY": 813.7
+      },
+      "uvCenter": {
+        "u": 0.2763,
+        "v": 0.4465,
+        "pxX": 283,
+        "pxY": 457.2
+      },
+      "posBounds": {
+        "minX": -1.218,
+        "maxX": -0.12,
+        "minY": 1.511,
+        "maxY": 2.443,
+        "minZ": -1.211,
+        "maxZ": 1.193
+      }
+    },
+    "leftValance": {
+      "name": "Left Valance",
+      "vertexCount": 99,
+      "uvBounds": {
+        "minU": 0.01317,
+        "maxU": 0.21887,
+        "minV": 0.03203,
+        "maxV": 0.9734
+      },
+      "canvas1024Bounds": {
+        "minX": 13.5,
+        "maxX": 224.1,
+        "minY": 32.8,
+        "maxY": 996.8
+      },
+      "uvCenter": {
+        "u": 0.116,
+        "v": 0.5027,
+        "pxX": 118.8,
+        "pxY": 514.8
+      },
+      "posBounds": {
+        "minX": -1.22,
+        "maxX": -1.199,
+        "minY": 1.2,
+        "maxY": 1.418,
+        "minZ": -1.202,
+        "maxZ": 1.202
+      }
+    },
+    "rightPeak": {
+      "name": "Right Peak",
+      "vertexCount": 173,
+      "uvBounds": {
+        "minU": 0.5343,
+        "maxU": 0.90513,
+        "minV": 0.09838,
+        "maxV": 0.79738
+      },
+      "canvas1024Bounds": {
+        "minX": 547.1,
+        "maxX": 926.9,
+        "minY": 100.7,
+        "maxY": 816.5
+      },
+      "uvCenter": {
+        "u": 0.7197,
+        "v": 0.4479,
+        "pxX": 737,
+        "pxY": 458.6
+      },
+      "posBounds": {
+        "minX": 0.117,
+        "maxX": 1.216,
+        "minY": 1.511,
+        "maxY": 2.436,
+        "minZ": -1.204,
+        "maxZ": 1.193
+      }
+    },
+    "rightValance": {
+      "name": "Right Valance",
+      "vertexCount": 89,
+      "uvBounds": {
+        "minU": 0.7882,
+        "maxU": 0.97158,
+        "minV": 0.0321,
+        "maxV": 0.79487
+      },
+      "canvas1024Bounds": {
+        "minX": 807.1,
+        "maxX": 994.9,
+        "minY": 32.9,
+        "maxY": 813.9
+      },
+      "uvCenter": {
+        "u": 0.8799,
+        "v": 0.4135,
+        "pxX": 901,
+        "pxY": 423.4
+      },
+      "posBounds": {
+        "minX": 1.196,
+        "maxX": 1.222,
+        "minY": 1.2,
+        "maxY": 1.418,
+        "minZ": -1.201,
+        "maxZ": 1.189
+      }
+    }
+  }
+}

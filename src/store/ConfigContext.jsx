@@ -44,11 +44,11 @@ export function ConfigProvider({ children }) {
       type: "text",
       content: text,
       color: "#0F172A",
-      fontSize: 48,
+      fontSize: 38,
       fontFamily: "'Montserrat', sans-serif",
       fontWeight: "800",
       x: 0.5,
-      y: 0.5,
+      y: 0.70,
       scale: 1.0,
       rotation: 0,
       opacity: 1.0,
@@ -67,8 +67,8 @@ export function ConfigProvider({ children }) {
 
   // Add image / full artwork layer
   const addImageLayer = useCallback((imgElement, fileName = "artwork.png") => {
-    // Default size to 600px or fit canvas
-    const targetW = 600;
+    // Default size to fit front peak cleanly
+    const targetW = 340;
     const targetH = (imgElement.naturalHeight / (imgElement.naturalWidth || 1)) * targetW;
 
     const newLayer = {
@@ -79,7 +79,7 @@ export function ConfigProvider({ children }) {
       width: targetW,
       height: targetH,
       x: 0.5,
-      y: 0.5,
+      y: 0.70,
       scale: 1.0,
       rotation: 0,
       opacity: 1.0

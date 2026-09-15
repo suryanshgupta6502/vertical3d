@@ -58,7 +58,7 @@ function ConfiguratorContent() {
   }, []);
 
   // Post message to Shopify parent window when embedded in iframe
-  const   handleAddToCart = useCallback(() => {
+  const handleAddToCart = useCallback(() => {
     let preview3d = null;
     let uvLayout = null;
 
